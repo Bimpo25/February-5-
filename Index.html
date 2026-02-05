@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CR7 x Yazhl ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-weight:300;
+}
+
+button{
+    padding:15px 30px;
+    margin-top:20px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#ff0055;
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff3377;
+}
+
+.hidden{
+    display:none;
+}
+
+.fade-in{
+    animation:fade 2s ease-in forwards;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.heart{
+    font-size:80px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+}
+
+.quote{
+    max-width:800px;
+    font-size:22px;
+    line-height:1.8;
+}
+
+footer{
+    padding:20px;
+    text-align:center;
+    background:#111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Intro Section -->
+<section id="intro">
+    <h1>CR7 x Yazhl ❤️</h1>
+    <h2>“I Never Give Up — Just Like Cristiano Ronaldo”</h2>
+    <button onclick="startJourney()">Start Our Journey</button>
+</section>
+
+<!-- Ronaldo Inspiration -->
+<section id="ronaldo" class="hidden">
+    <h1>Inspired by Cristiano Ronaldo</h1>
+    <p class="quote">
+        He came from nothing. Rejections. Struggles. Doubts.  
+        But he never gave up.  
+        And because of that… he became a legend.
+        <br><br>
+        Just like how I never gave up on us, Yazhl.
+    </p>
+    <button onclick="nextSection('story')">See Our Story</button>
+</section>
+
+<!-- Love Story -->
+<section id="story" class="hidden">
+    <h1>Our Story</h1>
+    <p class="quote">
+        On Ronaldo’s birthday, something magical happened…  
+        You said <b>YES</b> ❤️  
+        That day became my personal Champions League final victory.
+        <br><br>
+        You are my biggest win.
+    </p>
+    <button onclick="nextSection('promise')">My Promise</button>
+</section>
+
+<!-- Promise Section -->
+<section id="promise" class="hidden">
+    <h1>My Promise to You</h1>
+    <p class="quote">
+        Like Ronaldo trains every single day to be the best,  
+        I promise to work every day to be the best for you.
+        <br><br>
+        I will never give up on us.
+    </p>
+    <button onclick="showSurprise()">Click for a Surprise</button>
+</section>
+
+<!-- Surprise -->
+<section id="surprise" class="hidden">
+    <div class="heart">❤️</div>
+    <h1>Yazhl, You Are My Forever</h1>
+    <p class="quote">
+        This website is not just code.  
+        It’s my effort, my creativity, my love — just for you.
+        <br><br>
+        Will you continue this beautiful journey with me?
+    </p>
+</section>
+
+<footer>
+Made with ❤️ for Yazhl | CR7 Energy | Never Give Up
+</footer>
+
+<script>
+function startJourney(){
+    document.getElementById('intro').classList.add('hidden');
+    document.getElementById('ronaldo').classList.remove('hidden');
+    document.getElementById('ronaldo').classList.add('fade-in');
+}
+
+function nextSection(id){
+    document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById(id).classList.add('fade-in');
+}
+
+function showSurprise(){
+    nextSection('surprise');
+}
+</script>
+
+</body>
+</html>
 
