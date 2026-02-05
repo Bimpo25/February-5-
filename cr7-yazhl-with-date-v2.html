@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR7 & Yazhl - Legendary Moments Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600;700&family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cr7-gold: #FFD700;
+            --cr7-red: #DC143C;
+            --cr7-white: #FFFFFF;
+            --cr7-black: #0A0A0A;
+            --portugal-green: #006847;
+            --manchester-red: #DA291C;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            background: var(--cr7-black);
+            color: var(--cr7-white);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a0000 50%, #0A0A0A 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cr7-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(8rem, 20vw, 18rem);
+            color: var(--cr7-gold);
+            text-shadow: 
+                0 0 20px rgba(255, 215, 0, 0.5),
+                0 0 40px rgba(255, 215, 0, 0.3),
+                4px 4px 0px var(--manchester-red),
+                8px 8px 0px rgba(220, 20, 60, 0.5);
+            line-height: 0.9;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 20px rgba(255, 215, 0, 0.5),
+                    0 0 40px rgba(255, 215, 0, 0.3),
+                    4px 4px 0px var(--manchester-red),
+                    8px 8px 0px rgba(220, 20, 60, 0.5);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 30px rgba(255, 215, 0, 0.8),
+                    0 0 60px rgba(255, 215, 0, 0.5),
+                    4px 4px 0px var(--manchester-red),
+                    8px 8px 0px rgba(220, 20, 60, 0.7);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Righteous', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-top: -20px;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--cr7-gold), var(--cr7-red), var(--cr7-gold));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            margin-top: 20px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            animation: fadeIn 2s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .scroll-indicator::before {
+            content: '▼';
+            font-size: 2rem;
+            color: var(--cr7-gold);
+        }
+
+        /* Clarification Section */
+        .clarification-section {
+            padding: 120px 20px;
+            background: linear-gradient(180deg, var(--cr7-black) 0%, #0a0a1a 50%, var(--cr7-black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clarification-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.1), transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--cr7-gold);
+            text-shadow: 2px 2px 0px var(--manchester-red);
+        }
+
+        .question-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a2a, #2a2a3a);
+            border: 3px solid var(--cr7-gold);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .question-text {
+            font-family: 'Righteous', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            margin-bottom: 30px;
+            color: var(--cr7-white);
+            line-height: 1.4;
+        }
+
+        .context-text {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .choice-button {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .yes-button {
+            background: linear-gradient(135deg, #006847, #00a86b);
+            color: white;
+            box-shadow: 0 5px 20px rgba(0, 168, 107, 0.5);
+        }
+
+        .yes-button:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 8px 30px rgba(0, 168, 107, 0.7);
+        }
+
+        .no-button {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.5);
+        }
+
+        .no-button:hover {
+            transform: translate(var(--random-x, 0), var(--random-y, 0)) scale(0.9);
+        }
+
+        /* Response Sections */
+        .response-section {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            border-radius: 20px;
+            display: none;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .response-section.active {
+            display: block;
+        }
+
+        .yes-response {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.2), rgba(0, 104, 71, 0.1));
+            border: 2px solid var(--portugal-green);
+        }
+
+        .no-response {
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(139, 0, 0, 0.1));
+            border: 2px solid var(--cr7-red);
+        }
+
+        .response-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--cr7-gold);
+            text-align: center;
+        }
+
+        .response-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+
+        /* Legendary Moments Section */
+        .moments-section {
+            padding: 120px 20px;
+            background: linear-gradient(180deg, var(--cr7-black) 0%, #1a0a0a 100%);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .moment-card {
+            background: linear-gradient(135deg, #1a1a2a, #0a0a1a);
+            border: 2px solid var(--cr7-gold);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moment-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .moment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .moment-card:hover::before {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        .moment-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .moment-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--cr7-gold);
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .moment-vs {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--cr7-red);
+            font-weight: bold;
+        }
+
+        .moment-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cr7-moment {
+            background: rgba(220, 20, 60, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .my-moment {
+            background: rgba(0, 168, 107, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(180deg, #0a0a1a 0%, var(--cr7-black) 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--cr7-gold);
+            margin-bottom: 30px;
+        }
+
+        .footer-text {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .siuu-button {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--cr7-gold), var(--manchester-red));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .siuu-button:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Date Section Button Styles */
+        .date-section button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .date-section button:active {
+            transform: scale(0.98);
+        }
+
+        /* Floating Hearts */
+        .floating-heart {
+            position: fixed;
+            font-size: 3rem;
+            animation: floatUp 3s ease-out forwards;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Heart Button */
+        .heart-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .heart-button {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            border: none;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .heart-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 30px rgba(220, 20, 60, 0.7);
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--cr7-gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .music-toggle {
+            background: linear-gradient(135deg, var(--cr7-gold), var(--manchester-red));
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .music-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .music-label {
+            color: var(--cr7-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .volume-control {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .question-box {
+                padding: 40px 20px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+            }
+            
+            .choice-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="cr7-number">CR7</div>
+            <h1 class="hero-title">LEGENDARY MOMENTS</h1>
+            <p class="hero-subtitle">A COMPARISON YOU NEVER ASKED FOR</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Clarification Section -->
+    <section class="clarification-section">
+        <h2 class="section-title">HOLD UP! ⚽</h2>
+        
+        <div class="question-box" id="questionBox">
+            <p class="question-text">
+                Yazhl, did you actually say YES? 🤔
+            </p>
+            <p class="context-text">
+                After I sent you that "Do You Love Me?" website on February 5th at 11:54 PM,<br>
+                you sent me a message... and I may have jumped to conclusions faster than CR7 celebrates a goal. 😅<br><br>
+                So let me ask you directly this time:
+            </p>
+            <div class="button-container">
+                <button class="choice-button yes-button" onclick="handleYes()">YES ✓</button>
+                <button class="choice-button no-button" onclick="handleNo()">NO ✗</button>
+            </div>
+        </div>
+
+        <!-- YES Response -->
+        <div class="response-section yes-response" id="yesResponse">
+            <h3 class="response-title">🎉 SIUUUUUU! 🎉</h3>
+            <p class="response-text">
+                GOOOOOAL! Like CR7 scoring in a Champions League final!<br><br>
+                This is more legendary than his bicycle kick against Juventus!<br>
+                More beautiful than his free kick against Portsmouth!<br>
+                More powerful than his header against Sampdoria!<br><br>
+                Yazhl, you just made me feel like I won the Ballon d'Or! 🏆❤️<br><br>
+                Now scroll down to see how our legendary moments compare to CR7's! 😄
+            </p>
+        </div>
+
+        <!-- NO Response -->
+        <div class="response-section no-response" id="noResponse">
+            <h3 class="response-title">😅 OFFSIDE!</h3>
+            <p class="response-text">
+                Okay, so I pulled a "Ronaldo missing a penalty" moment there... 😅<br><br>
+                Look, even CR7 doesn't score every time. He missed penalties, had goals disallowed, got red cards...<br>
+                But he never stopped trying!<br><br>
+                So... can we at least scroll down and see the funny comparison I made?<br>
+                I spent way too much time on this website! 🤷‍♂️⚽<br><br>
+                (And maybe, just maybe, I can change that NO to a YES someday? 👉👈)
+            </p>
+        </div>
+    </section>
+
+    <!-- Date Invitation Section -->
+    <section class="date-section" style="padding: 120px 20px; background: linear-gradient(180deg, var(--cr7-black) 0%, #0a1a0a 50%, var(--cr7-black) 100%); position: relative; overflow: hidden;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 40px;">⚽ THE NEXT MATCH ☕</h2>
+            
+            <div style="background: linear-gradient(135deg, #1a1a2a, #2a2a3a); border: 3px solid var(--cr7-gold); border-radius: 30px; padding: 60px 40px; box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);">
+                <div style="font-size: 4rem; margin-bottom: 20px;">📅</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--cr7-gold); margin-bottom: 30px;">
+                    COROMANDEL CAFE<br>THIS SATURDAY
+                </h3>
+                
+                <p style="font-size: 1.4rem; line-height: 1.8; color: rgba(255, 255, 255, 0.9); margin-bottom: 30px;">
+                    Look, even CR7 needs a good team to win championships. 🏆<br>
+                    And I think we'd make a pretty legendary team over coffee! ☕✨<br><br>
+                    <strong style="color: var(--cr7-gold);">So, Yazhl... will you go on a date with me?</strong><br>
+                    Coromandel Cafe, this Saturday?<br><br>
+                    I promise:<br>
+                    ✓ No more confusing websites (after this one 😅)<br>
+                    ✓ Actual conversation instead of code<br>
+                    ✓ Good coffee and even better company<br>
+                    ✓ I won't do the SIUUU celebration in public... maybe 👀
+                </p>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                    <button onclick="handleDateYes()" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; padding: 20px 50px; background: linear-gradient(135deg, #006847, #00a86b); color: white; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 20px rgba(0, 168, 107, 0.5); transition: all 0.3s ease;">
+                        YES! LET'S DO IT! ☕❤️
+                    </button>
+                    <button onclick="handleDateMaybe()" style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; padding: 20px 50px; background: linear-gradient(135deg, #FF8C00, #FFA500); color: white; border: none; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 20px rgba(255, 140, 0, 0.5); transition: all 0.3s ease;">
+                        MAYBE... 🤔
+                    </button>
+                </div>
+                
+                <div id="dateResponse" style="margin-top: 40px; padding: 30px; border-radius: 20px; display: none; animation: slideIn 0.6s ease-out;">
+                    <p id="dateResponseText" style="font-size: 1.3rem; line-height: 1.8;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legendary Moments Comparison Section -->
+    <section class="moments-section">
+        <h2 class="section-title">LEGENDARY MOMENTS COMPARISON</h2>
+        
+        <div class="comparison-grid">
+            <!-- Moment 1 -->
+            <div class="moment-card">
+                <div class="moment-icon">💬</div>
+                <h3 class="moment-title">THE LATE NIGHT MESSAGE</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Scores late goals in injury time<br>
+                    Cool, calm, collected! 😎
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Typed and deleted my message 47 times<br>
+                    Sweating bullets at 11:54 PM! 😰💦
+                </div>
+            </div>
+
+            <!-- Moment 2 -->
+            <div class="moment-card">
+                <div class="moment-icon">👀</div>
+                <h3 class="moment-title">THE "SEEN" ANXIETY</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Waits for VAR decisions with confidence<br>
+                    Knows he's right! ✓
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Watches "seen" notification like my life depends on it<br>
+                    "Is she typing? Why did she stop? WHAT DOES IT MEAN?!" 😵
+                </div>
+            </div>
+
+            <!-- Moment 3 -->
+            <div class="moment-card">
+                <div class="moment-icon">🤔</div>
+                <h3 class="moment-title">THE OVERTHINKING CHAMPION</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Practices penalties, knows exactly what to do<br>
+                    Prepared for everything! 🎯
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Analyzes your emoji choices like a PhD thesis<br>
+                    "She used '😊' instead of '😄'... IT'S OVER!" 📊
+                </div>
+            </div>
+
+            <!-- Moment 4 -->
+            <div class="moment-card">
+                <div class="moment-icon">💪</div>
+                <h3 class="moment-title">THE DEDICATION</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Trains 5 hours daily, strict diet<br>
+                    Ultimate dedication! 🏋️
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Learned HTML, CSS, JavaScript for you<br>
+                    Also googled "how to be interesting" 42 times! 💻😅
+                </div>
+            </div>
+
+            <!-- Moment 5 -->
+            <div class="moment-card">
+                <div class="moment-icon">📱</div>
+                <h3 class="moment-title">THE NOTIFICATION SPRINT</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Fastest player on the pitch<br>
+                    38.6 km/h top speed! 🏃💨
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Grabbing my phone within 0.3 seconds of your notification<br>
+                    Olympic-level phone-checking speed! 📲⚡
+                </div>
+            </div>
+
+            <!-- Moment 6 -->
+            <div class="moment-card">
+                <div class="moment-icon">🎭</div>
+                <h3 class="moment-title">THE ACTING PERFORMANCE</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Sometimes accused of diving<br>
+                    Theatrical moments! 🎬
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Acting cool while internally screaming<br>
+                    "Oh hey, just casually confessing my feelings nbd!" 🎪
+                </div>
+            </div>
+
+            <!-- Moment 7 -->
+            <div class="moment-card">
+                <div class="moment-icon">🚨</div>
+                <h3 class="moment-title">THE RISKY MOVE</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> Leaving Real Madrid for Juventus<br>
+                    Bold career moves! 🔄
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Making an entire CR7-themed website to ask you out<br>
+                    Might be genius. Might be insane. Time will tell! 🎲
+                </div>
+            </div>
+
+            <!-- Moment 8 -->
+            <div class="moment-card">
+                <div class="moment-icon">🏆</div>
+                <h3 class="moment-title">THE ULTIMATE TROPHY</h3>
+                <div class="cr7-moment">
+                    <strong>CR7:</strong> 5 Ballon d'Ors, countless trophies<br>
+                    Living legend! 👑
+                </div>
+                <div class="moment-vs">VS</div>
+                <div class="my-moment">
+                    <strong>Me:</strong> Hoping for one coffee date with you<br>
+                    Would mean more than all the Ballon d'Ors! ☕❤️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 class="footer-title">THE FINAL WHISTLE</h2>
+        <p class="footer-text">
+            CR7's career teaches us: Take risks, celebrate victories, learn from defeats, and never give up!<br>
+            Even if this website doesn't win your heart, at least I tried with style! 😎⚽
+        </p>
+        <button class="siuu-button" onclick="celebrateSiuu()">SIUUUU! 🎉</button>
+        <p style="margin-top: 40px; opacity: 0.6; font-size: 0.9rem;">
+            Made with confusion, hope, and way too much CSS<br>
+            For Yazhl 💛 | Inspired by CR7's Never Give Up Spirit
+        </p>
+    </footer>
+
+    <!-- Interactive Heart Button -->
+    <div class="heart-container">
+        <button class="heart-button" onclick="createHeart()">❤️</button>
+    </div>
+
+    <!-- Background Music Player -->
+    <div class="music-player">
+        <button onclick="toggleMusic()" id="musicToggle" class="music-toggle">🎵</button>
+        <span class="music-label">MUSIC</span>
+        <input type="range" id="volumeControl" min="0" max="100" value="30" oninput="changeVolume(this.value)" class="volume-control">
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <!-- Romantic upbeat background music - you can replace with any MP3 URL -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Background Music Controls
+        let musicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        bgMusic.volume = 0.3; // Start at 30% volume
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicToggle.textContent = '🎵';
+                musicToggle.style.transform = 'scale(1)';
+                musicPlaying = false;
+            } else {
+                bgMusic.play();
+                musicToggle.textContent = '🔊';
+                musicToggle.style.transform = 'scale(1.1)';
+                musicPlaying = true;
+            }
+        }
+
+        function changeVolume(value) {
+            bgMusic.volume = value / 100;
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.textContent = ['❤️', '💛', '💚', '💙', '💜'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.bottom = '100px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // Handle YES button
+        function handleYes() {
+            document.getElementById('questionBox').style.display = 'none';
+            document.getElementById('yesResponse').classList.add('active');
+            document.getElementById('noResponse').classList.remove('active');
+            
+            // Celebration!
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createHeart(), i * 50);
+            }
+            
+            // Scroll to response
+            setTimeout(() => {
+                document.getElementById('yesResponse').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+
+        // Handle Date YES button
+        function handleDateYes() {
+            const responseDiv = document.getElementById('dateResponse');
+            const responseText = document.getElementById('dateResponseText');
+            
+            responseText.innerHTML = `
+                <strong style="color: var(--cr7-gold); font-size: 2rem;">GOOOOOOOAAAAL! ⚽🎉</strong><br><br>
+                This is better than CR7 winning the Champions League!<br>
+                Saturday at Coromandel Cafe it is! ☕❤️<br><br>
+                I promise to:<br>
+                ✓ Be there on time (unlike my late night messages 😅)<br>
+                ✓ Act normal (no SIUUU celebrations... probably)<br>
+                ✓ Not overthink everything you say (I'll try!)<br><br>
+                Can't wait! 🌟
+            `;
+            responseDiv.style.display = 'block';
+            responseDiv.style.background = 'linear-gradient(135deg, rgba(0, 168, 107, 0.3), rgba(0, 104, 71, 0.2))';
+            responseDiv.style.border = '2px solid var(--portugal-green)';
+            
+            // Celebration!
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => createHeart(), i * 80);
+            }
+        }
+
+        // Handle Date MAYBE button
+        function handleDateMaybe() {
+            const responseDiv = document.getElementById('dateResponse');
+            const responseText = document.getElementById('dateResponseText');
+            
+            responseText.innerHTML = `
+                <strong style="color: #FFA500; font-size: 2rem;">Okay, I respect that! 😊</strong><br><br>
+                "Maybe" is better than "No", right?<br>
+                That's like... half a goal? 0.5 - 0 in my favor? 📊<br><br>
+                Take your time, Yazhl!<br>
+                Just like CR7 said: "Talent without working hard is nothing."<br>
+                So I'll keep working on winning you over! 💪<br><br>
+                The offer stands whenever you're ready! ☕
+            `;
+            responseDiv.style.display = 'block';
+            responseDiv.style.background = 'linear-gradient(135deg, rgba(255, 140, 0, 0.3), rgba(255, 165, 0, 0.2))';
+            responseDiv.style.border = '2px solid #FFA500';
+            
+            // A few hearts
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => createHeart(), i * 150);
+            }
+        }
+
+        // Handle NO button (it runs away!)
+        let noButtonClicks = 0;
+        function handleNo() {
+            noButtonClicks++;
+            const noButton = event.target;
+            
+            if (noButtonClicks < 3) {
+                // Button runs away
+                const randomX = (Math.random() - 0.5) * 300;
+                const randomY = (Math.random() - 0.5) * 300;
+                noButton.style.setProperty('--random-x', randomX + 'px');
+                noButton.style.setProperty('--random-y', randomY + 'px');
+                
+                // Shrink the button
+                noButton.style.transform = `translate(${randomX}px, ${randomY}px) scale(${1 - (noButtonClicks * 0.15)})`;
+            } else {
+                // After 3 clicks, show the NO response
+                document.getElementById('questionBox').style.display = 'none';
+                document.getElementById('noResponse').classList.add('active');
+                document.getElementById('yesResponse').classList.remove('active');
+                
+                setTimeout(() => {
+                    document.getElementById('noResponse').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            }
+        }
+
+        // SIUUU Celebration
+        function celebrateSiuu() {
+            // Create multiple hearts
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createHeart(), i * 100);
+            }
+            
+            // Play SIUUU animation
+            const button = event.target;
+            button.textContent = '⚽ GOOOAL! ⚽';
+            button.style.transform = 'scale(1.3) rotate(360deg)';
+            
+            setTimeout(() => {
+                button.textContent = 'SIUUUU! 🎉';
+                button.style.transform = 'scale(1)';
+            }, 1000);
+        }
+
+        // Auto-scroll on scroll indicator click
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.clarification-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+
+        // Add animation to moment cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all moment cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.moment-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
